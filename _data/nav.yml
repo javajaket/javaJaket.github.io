@@ -1,8 +1,8 @@
-- title: "illustration"
-  href: "/illustration/"
+# - title: "illustration"
+#   href: "/illustration/"
 
-- title: "covers"
-  href: "/covers/"
+# - title: "covers"
+#   href: "/covers/"
   
 - title: "documentation"
   subcategories:
