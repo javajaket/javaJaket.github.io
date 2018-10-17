@@ -1,40 +1,33 @@
-{%- if include.theme == 'dark' -%}
-  <header class="header header--dark" {%- if include.background -%} style="background: {{ include.background }};" {%- endif -%}>
-{%- elsif include.theme == 'light' -%}
-  <header class="header header--light" {%- if include.background -%} style="background: {{ include.background }};" {%- endif -%}>
-{%- else -%}
-  <header class="header" {%- if include.background -%} style="background: {{ include.background }};" {%- endif -%}>
-{%- endif -%}
-    <div class="main">
-      <div class="header__title">
-        <div class="header__brand">
-          {%- include svg/logo.svg -%}
-          {%- assign _paths_root = site.paths.root | default: site.data.variables.default.paths.root  -%}
-          {%- include snippets/get-nav-url.html path=_paths_root -%}
-          {%- if site.title -%}
-            <a title="{%- if site.description -%}{{ site.description }}{%- endif -%}" href="{{ __return }}">{{ site.title }}</a>
-          {%- endif -%}
+{% if page.header %}
+  <header role="banner" id="header">
+      <div class="site-header medium-12 columns">
+        <nav class="hide-for-small-only hide-for-ipad">
+          {% include socials.html %}
+        </nav>
+        <div class="header-logo wraptainer">
+          <a href="{{ site.github.url }}/"><img src="{{ site.github.url }}/{{ page.header }}" alt="{{ site.title }} banner image" title="{{ site.title }} banner image" class="center"></a>
         </div>
-        <button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button>
+        <nav class="hide-for-small-only hide-for-ipad">
+          {% include navigation.html %}
+        </nav>
       </div>
-      {%- if site.data.navigation.header -%}
-      <nav class="navigation">
-        <ul>
-          {%- for _item in site.data.navigation.header -%}
-            {%- include snippets/get-nav-url.html path=_item.url -%}
-            {%- assign _nav_url = __return -%}
-            {%- include snippets/get-nav-url.html path=page.url -%}
-            {%- assign _page_url = __return -%}
-            {%- include snippets/locale-to-string.html locale=_item.titles -%}
-            {%- if _nav_url == _page_url -%}
-              <li class="navigation__link navigation__link--active"><a href="{{ _nav_url }}">{%- if _item.title -%}{{ _item.title }}{%- else -%}{{ __return }}{%- endif -%}</a></li>
-            {%- else -%}
-              <li class="navigation__link"><a href="{{ _nav_url }}">{%- if _item.title -%}{{ _item.title }}{%- else -%}{{ __return }}{%- endif -%}</a></li>
-            {%- endif -%}
-          {%- endfor -%}
-          <li><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></li>
-        </ul>
-      </nav>
-      {%- endif -%}
-    </div>
   </header>
+  
+  {% elsif site.header %}
+    <header role="banner" id="header" class="small-12 medium-3 columns">
+      <div class="site-header medium-12 columns">
+        <nav class="hide-for-small-only hide-for-ipad">
+          {% include socials.html %}
+        </nav>
+        <div class="header-logo wraptainer">
+          <a href="{{ site.github.url }}/"><img src="{{ site.github.url }}/{{ site.header }}" alt="{{ site.title }} banner image" title="{{ site.title }} banner image" class="center"></a>
+        </div>
+        <nav class="hide-for-small-only hide-for-ipad">
+          {% include navigation.html %}
+        </nav>
+      </div>
+    </header>
+  
+  {% else %}
+
+{% endif %}
