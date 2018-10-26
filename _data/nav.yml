@@ -3,7 +3,16 @@
 
 # - title: "covers"
 #   href: "/covers/"
-  
+
+- title: "front-end"
+  subcategories: 
+    - subtitle: "HTML"
+      subhref: "/documentation/html/"
+    - subtitle: "CSS"
+      subhref: "/documentation/css/"
+    - subtitle: "JavaScript"
+      subhref: "/documentation/JavaScript/"          
+
 - title: "documentation"
   subcategories:
     - subtitle: "installation"
