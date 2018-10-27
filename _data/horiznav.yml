@@ -3,7 +3,20 @@
 
 # - title: "covers"
 #   href: "/covers/"
-  
+
+- title: "HTML"
+  subcategories:
+
+- title: "CSS"
+  subcategories:
+
+- title: "javaScripte"
+  subcategories:
+    - subtitle: "객체,배열,함수 기초"
+      subhref: "/documentation/object&array"
+- title: "etc"
+  href: "/blog/"
+    
 - title: "documentation"
   subcategories:
     - subtitle: "installation"
