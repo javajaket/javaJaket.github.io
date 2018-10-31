@@ -1,18 +1,18 @@
 baseurl: "" # The subpath of your site. Use "" if you're hosting a blog at the root level.
-url: "username.github.io" # the base hostname & protocol for your site.
+url: "javajaket.github.io" # the base hostname & protocol for your site.
 
 paginate: 6 #articles per page
 paginate_path: /blog/page:num #makes pagination working
 
 # header text
-title: Your awesome site name :)
-header: Write something about you here...
+title: javajaket의 개발공부로그 :)
+header: 
 
 # for welcome page
 # to replace image go to index.html
 email:
-  address: "user@example.com"
-  text: "user (at) example.com"
+  address: "kt5161497@naver.com"
+  text: "kt5161497@naver.com"
 
 # disqus comment
 disqus:
@@ -20,7 +20,7 @@ disqus:
 
 # google analytics
 google:
-    tracking-id: "" #your tracking id here
+    tracking-id: "128229254" #your tracking id here
 
 gems:
   - jekyll-sitemap
