@@ -1,0 +1,54 @@
+main:
+  - title: "Portfolio"
+    url: /portfolio/
+  - title: "About"
+    url: /about/
+  - title: "Tags"
+    url: /tags/
+  - title: "Categories"
+    url: /categories/
+  - title: Notes
+    url: /notes/
+
+posts:
+  - title: Back-End
+    children:
+      - title: "Play Framework"
+        url: /categories/#playframework
+      - title: "Spring"
+        url: /categories/#spring
+      - title: "Linux"
+        url: /categories/#linux
+  - title: Front-End
+    children:
+      - title: "Jekyll"
+        url: /categories/#jekyll
+  - title: Client
+    children:
+      - title: "iOS"
+        url: /categories/#ios
+  - title: Programming
+    children:
+      - title: "Scala"
+        url: /categories/#scala
+      - title: "Machine Learning"
+        url: /categories/#machinelearning
+
+notes:
+  - title: Notes
+    url: /notes/
+    children:
+      - title: "Web"
+        url: /notes/#web
+      - title: "Jekyll"
+        url: /notes/#jekyll
+      - title: "iOS"
+        url: /notes/#ios
+      - title: "Linux"
+        url: /notes/#linux
+      - title: "DB"
+        url: /notes/#db
+      - title: "Configuration"
+        url: /notes/#config
+      - title: "Tool"
+        url: /notes/#tool

@@ -1,53 +1,79 @@
-baseurl: "" # The subpath of your site. Use "" if you're hosting a blog at the root level.
-url: "javajaket.github.io" # the base hostname & protocol for your site.
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
-paginate: 6 #articles per page
-paginate_path: /blog/page:num #makes pagination working
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: javajaket Blog의 개발공부로그
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://javajaket.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
-# header text
-title: javajaket의 개발공부로그 :)
-header: 
+# Build settings
+markdown: kramdown
+theme: minimal-mistakes-jekyll
 
-# for welcome page
-# to replace image go to index.html
-email:
-  address: "kt5161497@naver.com"
-  text: "kt5161497@naver.com"
-
-# disqus comment
-disqus:
-    shortname: "test" #your disqus comment short name
-
-# google analytics
-google:
-    tracking-id: "128229254" #your tracking id here
-
-gems:
-  - jekyll-sitemap
-  - jekyll-paginate
-  - jemoji
-
-# This is used by feed.xml. Uncomment if you want to use it.
-# description: "..."
+include: ["_pages"]
 
 exclude:
-  - "README.md"
-  - "CHANGELOG.md"
-  - "Gemfile"
-  - "Gemfile.lock"
+  - Gemfile
+  - Gemfile.lock
 
-permalink: /posts/:title
+paginate: 5
+
+plugins:
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-redirect-from
+
+collections:
+  portfolio:
+    output: true
+    permalink: /:collection/:path/
+    title: Portfolio
+  notes:
+    output: true
+    permalink: /:collection/:path/
+    title: Notes
+
+author:
+  name             : "Sungyu Jo"
+  email            : "kt5161497@naver.com"
+  avatar           : /img/pro.jpeg
+  bio              : 
+  github           : "https://github.com/javajaket/"
+  # linkedin         : "Sungyu Jo"
 
 defaults:
-  -
-    scope:
+  # _posts
+  - scope:
       path: ""
-      type: "pages"
+      type: posts
     values:
-      layout: "default"
-  -
-    scope:
-      path: ""
-      type: "posts"
+      sidebar:
+        nav: "posts"
+      comments: true
+  # _pages
+  - scope:
+      path: _pages
+      type: pages
     values:
-      layout: "post"
+      layout: single
+      author_profile: true
+
+google_analytics: "UA-128229254-1"
+
+comments:
+  provider: "disqus"
+  disqus:
+    shortname: "javajaket"
+
