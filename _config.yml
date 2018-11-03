@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: javajaket Blog의 개발공부로그
 baseurl: "" # the subpath of your site, e.g. /blog
-# url: "https://javajaket.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://javajaket.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
 markdown: kramdown
@@ -50,7 +50,7 @@ author:
   email            : "kt5161497@naver.com"
   avatar           : /img/pro.jpeg
   bio              : 
-  github           : "https://github.com/javajaket/"
+  github           : "javajaket"
   # linkedin         : "Sungyu Jo"
 
 defaults:
