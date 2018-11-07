@@ -1,79 +1,77 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+# Site
+title:              javajaket's Blog
+bio:                'Gather ye rosebuds while ye may...'
+description:        "javajaket's 개발공부로그"
+reading_time:       true
+words_per_minute:   200
+logo:               'assets/img/pro.jpeg'
+background:         'assets/img/placeholder-big.jpg'
+tiled_bg:           false   # Set this true if you want to tile your background image, otherwise it will be covered
+locale:             ko_kr
+baseurl:            ""
+# url:                http://127.0.0.1:4000
+# url:                https://nachwon.github.io
+# Jekyll
+permalink:          /:title/
+markdown:           kramdown
+highlighter:        rouge
+kramdown:
+  auto_ids:         true
+  footnote_nr:      1
+  entity_output:    as_char
+  toc_levels:       1..6
+  enable_coderay:   false
+mathjax:            true
+sass:
+  sass_dir:         _sass
+  style:            compressed
 
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: javajaket Blog의 개발공부로그
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://javajaket.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+# Comments
+disqus_shortname:   nachwon
 
-# Build settings
-markdown: kramdown
-theme: minimal-mistakes-jekyll
+# Social
+# if you don't have any of social below, comment the line.
+#google:
+  #plus:            #username
+  #analytics:
+  #verify:
+  #ad-client:
+  #ad-slot:
+#bing-verify:
+#email:
+# twitter:            username
+facebook:           sungyu.cho.3
+github-url:         javajaket
+#stackoverflow:     123456/username   from a "http://stackoverflow.com/users/123456/username" link
+#linkedin:          username
+#xing:              username
+instagram:          sungyu_guu
+#lastfm:            username
+#tumblr:            username
+#medium:            '@username'
+#pinterest:         username
+#foursquare:        username
+# steam:              76561198005689159
+#dribbble:          username
+# youtube:            nachwon
+#youtube-channel:   channel
+#soundcloud:        username
+#weibo:             username
+#flickr:            username
+#codepen:           username
+#keybase:           username
+#xmpp:              username@server.com
+#hackernews:        username
 
-include: ["_pages"]
-
-exclude:
-  - Gemfile
-  - Gemfile.lock
-
-paginate: 5
-
-plugins:
-  - jekyll-gist
+# Gems
+gems:
+  - jekyll-mentions
   - jekyll-feed
-  - jekyll-paginate
-  - jekyll-redirect-from
+  - jekyll-sitemap
+  - jekyll-gist
 
-collections:
-  portfolio:
-    output: true
-    permalink: /:collection/:path/
-    title: Portfolio
-  notes:
-    output: true
-    permalink: /:collection/:path/
-    title: Notes
+jekyll-mentions:
+    base_url: https://github.com
 
-author:
-  name             : "Sungyu Jo"
-  email            : "kt5161497@naver.com"
-  avatar           : /img/pro.jpeg
-  bio              : 
-  github           : "javajaket"
-  # linkedin         : "Sungyu Jo"
-
-defaults:
-  # _posts
-  - scope:
-      path: ""
-      type: posts
-    values:
-      sidebar:
-        nav: "posts"
-      comments: true
-  # _pages
-  - scope:
-      path: _pages
-      type: pages
-    values:
-      layout: single
-      author_profile: true
-
-google_analytics: "UA-128229254-1"
-
-comments:
-  provider: "disqus"
-  disqus:
-    shortname: "javajaket"
-
+# Exclude list
+exclude: [README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.json, _site, src, vendor, CNAME, LICENSE, Rakefile]
