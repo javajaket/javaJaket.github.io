@@ -3,9 +3,9 @@ layout: post
 title: '[Deploy] Django 프로젝트 배포하기 - 1. AWS'
 excerpt: AWS EC2에 장고 프로젝트 올리기
 comments: true
-category: Django
+category: CSS&HTML
 tags:
-  - Django
+  - CSS&HTML
   - AWS
   - Deploy
 ---
