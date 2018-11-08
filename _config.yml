@@ -31,14 +31,14 @@ sass:
 
 # Social
 # if you don't have any of social below, comment the line.
-#google:
+google:
   #plus:            #username
-  #analytics:
+  analytics:  UA-128229254-1
   #verify:
   #ad-client:
   #ad-slot:
 #bing-verify:
-#email:
+email: kt5161497@naver.com
 # twitter:            username
 facebook:           sungyu.cho.3
 github-url:         javajaket
