@@ -12,6 +12,7 @@ tags:
 ## Tag list
 - [객체](#객체)
 - [함수](#함수)
+- [생성자](#생성자)
 
 # 객체
 ---
@@ -274,4 +275,20 @@ let sub = new Umber("kim","2");
 ```js
 sub instanceof Umber;  //treu
 //instanceof 연산자를 사용하면, 객체가 특정 생성자의 인스턴스가 맞는지 확인할 수 있다.
+```
+
+## 메서드를 가진 객체를 생성하는 생성자
+
+```js
+function Circle(center,radius) {
+  this.center = center;
+  this.radius = radius;
+  this.area = function() {
+    return Math.PI * Math.sqrt(this.radius);
+  }
+}
+
+const p = {x:0,y:0};
+let c = new Circle(p,2.0);
+console.log(`넓이 = + ${c.area()});
 ```
