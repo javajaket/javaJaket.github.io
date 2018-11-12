@@ -2,7 +2,7 @@
 layout: post
 title: Object & Array 
 category: JavaScript
-excerpt: 
+excerpt: 객체 및 함수기초
 tags:
   - JavaScript 
   - Object
@@ -13,7 +13,9 @@ tags:
 - [객체](#객체)
 - [함수](#함수)
 - [생성자](#생성자)
+- [내장객체](#내장객체)
 
+---
 # 객체
 ---
 
@@ -290,5 +292,46 @@ function Circle(center,radius) {
 
 const p = {x:0,y:0};
 let c = new Circle(p,2.0);
-console.log(`넓이 = + ${c.area()});
+console.log(`넓이 = + ${c.area()}`);
 ```
+
+# 내장객체
+---
+사용자가 정의하는 생성자 외에도 자바스크립트에 처음부터 포함된 `내장 생성자(빌트인 오브젝트)`가 있다
+
+## Date 생성자
+Date 객체는 날짜와 시간(년,월,일,시,분,초,밀리초(천분의 1초(millisecond,ms))을 위한 메소드를 제공하는 built-in object이다.
+
+```js
+const today = new Date();
+const dayNames = ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'];
+
+const day = dayNames[today.getDay()],
+      year = today.getFullYear(),
+      month = today.getMonth()+1,
+      date = today.getDate(),
+      hour = today.getHours(),
+      minutes = today.getMinutes(),
+      seconds = today.getSeconds(),
+      ampm = hour >= 12 ? 'PM' : 'AM';
+
+
+console.log(`${year}년 ${month}월 ${date}일 ${hour}시 ${minutes}분 ${seconds}초 ${ampm}`);
+```
+
+# 배열(기초)
+---
+값의 목록으로 값마다 번호가 매겨져 있다.
+
+```js
+let evens = [2,4,6,8]
+```
+- [...] 부분이 배열 리터럴이며 배열 값 하나를 배열 요소라고 부른다.
+- `배열요소`는 왼쪽부터 순서대로 0,1,2... 번호가 매겨져 있다.요소에 매긴 번호는 요소번호 또는 인덱스라고 부른다.
+
+```js
+let various = [3.14, 'pi', ,{x:1,y:2},[2,4,6,8]]
+```
+- 인덱스 2인 요소에 undefinde가 표시되어 있지만 실제로는 없다.
+- 변수의 요소에는 변수와 마찬가지로 모든 타입의 값이 올 수 있다.
+
