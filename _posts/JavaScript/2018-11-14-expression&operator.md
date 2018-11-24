@@ -101,7 +101,27 @@ true + (new Date()) // trueWed Nov 14 2018 10:02:56 GMT+0900 (KST)
 ```js 
 let msgObj = new String('Hi nice to meet you');
 ```
-이처럼 원시 값을 객체로 변환하는 행위를 가리켜 원시 값을 객체로 래핑(wrapping)한다고 한다.
+이처럼 원시 값을 객체로 변환하는 행위를 가리켜 원시 값을 객체로 `래핑(wrapping)`한다고 한다.
+
 
 String 객체에는 문자열을 처리하기 위한 다양한 프로퍼티와 메서드가 마련되어 있다.[MDN참고](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String)
+
+## String 생성자의 메서드
+
+String생성자 또한 일종의 함수이며 프로퍼티를 갖고 있다. 
+
+|     프로퍼티    |     설명      |     비고    |
+|     :------   |     :------- | :------    |
+| String.length | 항상 1 |        |
+| String.fromCharCode() | 인수로 넘긴 문자 코드 목록으로 문자열을 만들어 반환 | |
+| String.fromCodePoint() | 인수로 넘긴 코드 포인트 목록으로 문자열을 만들어 반환 | ES6 |
+| String.prototype | String의 프로토타입 객체 | |
+| String.raw() | 템플릿 문자열의 원지 문자열 형식을 반환 | ES6 |
+
+```js
+String.fromCharCode(0xAE38); // 길
+String.fromCharCode(65,66,67); //ABC
+// 문자코드(UTF-16 인코딩 값)을 문자열로 변환.쉼표로 구분한 문자 코드 여러 개를 인수로 넘기면 각 문자 코드가 뜻하는 문자를 문자열로 연결
+```
+
 
