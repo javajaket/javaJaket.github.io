@@ -122,6 +122,73 @@ String생성자 또한 일종의 함수이며 프로퍼티를 갖고 있다.
 String.fromCharCode(0xAE38); // 길
 String.fromCharCode(65,66,67); //ABC
 // 문자코드(UTF-16 인코딩 값)을 문자열로 변환.쉼표로 구분한 문자 코드 여러 개를 인수로 넘기면 각 문자 코드가 뜻하는 문자를 문자열로 연결
+
+let msg = 'New message"
+console.log(msg[2]); //w 
+// 문자열을 읽을 때는 charAt메서드 대신 대괄호 연산자를 사용할 수 있다.
 ```
 
+<br>
+# 관계 연산자
+----
+
+| 연산자 | 예제 | 뜻 |
+| ---- | ---- | ---- |
+| == | a == b | a 값과 b 값이 같으면 true, 그 외에는 false |
+| != | a != b | a 값과 b 값이 다르면 true, 그 외에는 false | 
+| === | a === b | a 와 b의 `값과 타입`이 같으면 true, 그 외에는 false |
+| !== | a !== b | a 와 b의 `값과 타입`이 다르면 true, 그외에는 false |
+
+일치(===)연산자는 피연산자를 평가한 후에 타입을 변환하지 않은 상태의 두 값을 엄격하게 비교,동일(==)연산자는 내부적으로 좌우 피연산자의 타입을 변환한 다음에 좌변과 우변이 같은지를 느슨하게 비교
+
+<br>
+# 논리 연산자
+-----
+
+| 연산자 | 예제 | 뜻 | 예제의 뜻 |
+| ---- | ---- | ---- | ---- |
+| && | a && b | 논리 곱 | a와 b가 모두 true면 true, 그 외에는 false | 
+| :: | a :: b | 논리 합 | a와 b중 하나라고 true면 true, 모두가 false면 false | 
+| ! | !a | 부정 | a가 true면 false, false면 true |
+
+## 피연산자의 평가
+
+논리 연산자의 피연산자는 논리 값이 아니어도 된다. 논리값이 아니면 필요에 따라 타입을 변환한다.  
+
+```
+0, -0,빈문자열(""),NaN,null,undefinde -> false
+0을 제외한 숫자, 빈 문자열을 제외한 문자열, 모든 객체,심벌 -> true
+```
+
+논리곱(&&)연산자와 논리합(::)연산자는 단락 평가(short-circuit evalution)를 한다. 단락 평가란 첫 번쨰 피연산자 값이 표현식을 결졍하면 두 번쨰 피연산자을 평가하지 않는 것을 말한다. 또한 논리곱 연산자와 논리합 연산자는 논리값(true,false)대신에 마지막으로 평가한 피연산자 값을 반환한다.
+
+```js
+// 논리합
+true || true // true
+true || false // false
+false || true // true 
+false || false // false
+// 논리곱
+true && true // true
+true && false // false
+false && false // false
+false && false // false
+```
+
+:: 연산자는 여러 개의 값 후보 중에서 null 또는 undefined가 아닌 값을 선택하고자 할 때 유용하세 사용된다. 
+
+```js
+let time = time_interval || animationSettings.time || 33;
+// time_interval이 정의되어 있을 대는 time_interval 값을 사용, 정의되지 않았을 때는 animationSettings객체의 time 프로퍼티를 사용,그것또한 정의되어 있지 않았을 때는 정수(33)을 사용
+```
+
+<br>
+
+# 조건 연산자
+---
+
+```js
+let num = (a%2 == 0)? '짝수' : '홀수';
+```
+이때 우변 값은 a % 2가 0일 때(즉,a가 짝수일 때)는 '짝수'가 되고, 그렇지 않을 때(즉,a가 홀수일 때)는 '홀수'가 된다. 조건 연산자는 삼항 연산자이며 첫 번째 피연산자를 조건식으로 평가한 후에 그결과가 true면 두 번째 피연산즐 값으로 삼고, false면 세 번째 피연산자를 값을 삼는다.
 
