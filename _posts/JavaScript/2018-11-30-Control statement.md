@@ -15,9 +15,21 @@ tags:
 ## if/else문
 조건에 따라 특정 영역의 코드를 실행시키거나 실행시키지 않을 수 있다.
 ```js
-function roll() {
-  
+if(num == 1) {
+  console.log('one')
+} else if(num == 2) {
+  console.log('two')
+} else {
+  console.log('Other')
 }
 ```
-
+```js
+if(hp<120 && lp<80) {
+  judgement.innerHTML = '정상';
+} else if(139>hp && 89>lp) {
+  judgement.innerHTML = '불안';
+} else {
+  judgement.innerHTML = '비정상';
+}
+```
 

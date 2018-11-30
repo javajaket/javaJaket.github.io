@@ -148,7 +148,7 @@ console.log(msg[2]); //w
 | 연산자 | 예제 | 뜻 | 예제의 뜻 |
 | ---- | ---- | ---- | ---- |
 | && | a && b | 논리 곱 | a와 b가 모두 true면 true, 그 외에는 false | 
-| :: | a :: b | 논리 합 | a와 b중 하나라고 true면 true, 모두가 false면 false | 
+| :: | a :: b | 논리 합 | a와 b중 하나라도 true면 true, 모두가 false면 false | 
 | ! | !a | 부정 | a가 true면 false, false면 true |
 
 ## 피연산자의 평가
